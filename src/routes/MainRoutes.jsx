@@ -1,0 +1,13 @@
+import { Navigate, Route, Routes } from "react-router-dom";
+import { HomePage } from "../pages/HomePage";
+
+export const MainRoutes = () => {
+  return (
+    <div className="container">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </div>
+  );
+};
