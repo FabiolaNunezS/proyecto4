@@ -20,7 +20,7 @@ export const Formulario = () => {
   return (
     <div className="container">
       <div className="card bg-light text-dark p-4 text-center">
-        <h2 className="mb-4">Formulario para reservas</h2>
+        <h2 className="mb-4">Realiza tu reserva</h2>
         <form action="submit">
           <div className="form-group mb-3">
             <label htmlFor="name" className="mr-2">
