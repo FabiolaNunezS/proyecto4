@@ -1,4 +1,6 @@
 import { useState } from "react";
+import moment from "moment";
+import { toast } from "react-toastify";
 
 export const Formulario = () => {
   const [formState, setFormState] = useState({
@@ -17,11 +19,16 @@ export const Formulario = () => {
     console.log(target.value);
   };
 
+  const submitFormulario = (e) => {
+    e.preventDefault();
+    alert("Reserva realizada");
+  };
+
   return (
     <div className="container">
       <div className="card bg-light text-dark p-4 text-center">
         <h2 className="mb-4">Realiza tu reserva</h2>
-        <form action="submit">
+        <form onSubmit={submitFormulario}>
           <div className="form-group mb-3">
             <label htmlFor="name" className="mr-2">
               Nombre
@@ -63,6 +70,7 @@ export const Formulario = () => {
             <input
               type="datetime-local"
               name="Fecha"
+              min={moment().format("YYYY-MM-DD hh:mm")}
               value={formState.Fecha}
               onChange={onChangeFormulario}
             />

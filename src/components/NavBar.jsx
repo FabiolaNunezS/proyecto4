@@ -7,9 +7,9 @@ export const NavBar = () => {
       data-bs-theme="dark"
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <NavLink className="navbar-brand" to="/">
           Restaurante Pinolero
-        </a>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -24,19 +24,19 @@ export const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <NavLink className="nav-link active" aria-current="page" to="/">
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink className="nav-link" to="/reservas">
                 Formulario de reserva
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink className="nav-link" to="/menu">
                 Menu
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
