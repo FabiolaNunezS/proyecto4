@@ -1,13 +1,14 @@
 import { useState } from "react";
 import moment from "moment";
 import { toast } from "react-toastify";
+import { db } from "../../firebase/firebase";
 
 export const Formulario = () => {
   const [formState, setFormState] = useState({
-    Nombre: "",
-    Correo: "",
-    Telefono: "",
-    Fecha: "",
+    nombre: "",
+    correo: "",
+    telefono: "",
+    fecha: "",
   });
 
   const onChangeFormulario = ({ target }) => {
@@ -19,8 +20,9 @@ export const Formulario = () => {
     console.log(target.value);
   };
 
-  const submitFormulario = (e) => {
+  const submitFormulario = async (e) => {
     e.preventDefault();
+    await db.collection("reservas").add(formState);
     alert("Reserva realizada");
   };
 
@@ -35,7 +37,7 @@ export const Formulario = () => {
             </label>
             <input
               type="text"
-              name="Nombre"
+              name="nombre"
               placeholder="Agregue su nombre"
               value={formState.Nombre}
               onChange={onChangeFormulario}
@@ -47,7 +49,7 @@ export const Formulario = () => {
             </label>
             <input
               type="email"
-              name="Correo"
+              name="correo"
               value={formState.Correo}
               onChange={onChangeFormulario}
             />
@@ -59,7 +61,7 @@ export const Formulario = () => {
             <input
               type="number"
               value={formState.Telefono}
-              name="Telefono"
+              name="telefono"
               onChange={onChangeFormulario}
             />
           </div>
@@ -69,7 +71,7 @@ export const Formulario = () => {
             </label>
             <input
               type="datetime-local"
-              name="Fecha"
+              name="fecha"
               min={moment().format("YYYY-MM-DD hh:mm")}
               value={formState.Fecha}
               onChange={onChangeFormulario}
