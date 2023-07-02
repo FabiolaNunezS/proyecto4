@@ -31,55 +31,71 @@ export const Formulario = () => {
       <div className="card bg-light text-dark p-4 text-center">
         <h2 className="mb-4">Realiza tu reserva</h2>
         <form onSubmit={submitFormulario}>
-          <div className="form-group mb-3">
-            <label htmlFor="name" className="mr-2">
+          <div className="form-group row justify-content-center">
+            <label htmlFor="name" className="col-sm-2 col-form-label">
               Nombre
             </label>
-            <input
-              type="text"
-              name="nombre"
-              placeholder="Agregue su nombre"
-              value={formState.Nombre}
-              onChange={onChangeFormulario}
-            />
+            <div className="col-sm-0">
+              <input
+                type="text"
+                name="nombre"
+                placeholder="Agregue su nombre"
+                value={formState.Nombre}
+                onChange={onChangeFormulario}
+              />
+            </div>
           </div>
-          <div className="form-group mb-3">
-            <label htmlFor="email" className="mt-2">
+          <div className="form-group row justify-content-center">
+            <label htmlFor="email" className="col-sm-2 col-form-label">
               Correo
             </label>
-            <input
-              type="email"
-              name="correo"
-              value={formState.Correo}
-              onChange={onChangeFormulario}
-            />
+            <div className="col-sm-0">
+              <input
+                type="email"
+                name="correo"
+                value={formState.Correo}
+                onChange={onChangeFormulario}
+              />
+            </div>
           </div>
-          <div className="form-group mb-3">
-            <label htmlFor="telefono" className="mt-2">
+          <div className="form-group row justify-content-center">
+            <label htmlFor="telefono" className="col-sm-2 col-form-label">
               Teléfono
             </label>
-            <input
-              type="number"
-              value={formState.Telefono}
-              name="telefono"
-              onChange={onChangeFormulario}
-            />
+            <div className="col-sm-0">
+              <input
+                type="number"
+                value={formState.Telefono}
+                name="telefono"
+                onChange={onChangeFormulario}
+              />
+            </div>
           </div>
-          <div className="form-group mb-3">
-            <label htmlFor="date" className="mr-2">
+          <div className="form-group row justify-content-center">
+            <label htmlFor="date" className="col-sm-2 col-form-label">
               Fecha
             </label>
-            <input
-              type="datetime-local"
-              name="fecha"
-              min={moment().format("YYYY-MM-DD hh:mm")}
-              value={formState.Fecha}
-              onChange={onChangeFormulario}
-            />
+            <div className="col-sm-0">
+              <input
+                type="datetime-local"
+                name="fecha"
+                min={moment().format("YYYY-MM-DD hh:mm")}
+                value={formState.Fecha}
+                onChange={onChangeFormulario}
+              />
+            </div>
           </div>
-          <button type="submit" className="btn btn-primary mb-3" id="sumbit">
-            Agregar
-          </button>
+          <div className="form-group row justify-content-center">
+            <div className="col-sm-6 mt-3">
+              <button
+                type="submit"
+                className="btn btn-primary mb-3"
+                id="sumbit"
+              >
+                Agregar
+              </button>
+            </div>
+          </div>
         </form>
       </div>
     </div>
