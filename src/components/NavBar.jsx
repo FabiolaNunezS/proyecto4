@@ -7,7 +7,8 @@ export const NavBar = () => {
       data-bs-theme="dark"
     >
       <div className="container-fluid">
-        <NavLink className="navbar-brand" to="/">
+        <NavLink className="navbar-brand navbar-icon-link" to="/">
+          <img src="./images/logohp.png" alt="Icono" className="navbar-icon" />
           Restaurante Pinolero
         </NavLink>
         <button

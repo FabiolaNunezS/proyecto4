@@ -22,14 +22,14 @@ export const FormularioReservas = () => {
   return (
     <main>
       <Hero />
-      <table>
-        <thead>
+      <table className="table table-striped">
+        <thead className="thead-dark">
           <tr>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Telefono</th>
-            <th>Numero de personas</th>
-            <th>Fecha</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Numero de personas</th>
+            <th scope="col">Fecha</th>
           </tr>
         </thead>
         <tbody>

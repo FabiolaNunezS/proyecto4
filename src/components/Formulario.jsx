@@ -1,6 +1,7 @@
 import { useState } from "react";
 import moment from "moment";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { db } from "../../firebase/firebase";
 
 export const Formulario = () => {
@@ -24,7 +25,8 @@ export const Formulario = () => {
   const submitFormulario = async (e) => {
     e.preventDefault();
     await db.collection("reservas").add(formState);
-    alert("Reserva realizada");
+    toast.success("Reserva realizada");
+    // alert("Reserva realizada");
   };
 
   return (
@@ -36,9 +38,10 @@ export const Formulario = () => {
             <label htmlFor="name" className="col-sm-2 col-form-label">
               Nombre
             </label>
-            <div className="col-sm-0">
+            <div className="col-sm-10">
               <input
                 type="text"
+                className="form-control mb-3"
                 name="nombre"
                 placeholder="Agregue su nombre"
                 value={formState.nombre}
@@ -50,10 +53,12 @@ export const Formulario = () => {
             <label htmlFor="email" className="col-sm-2 col-form-label">
               Correo
             </label>
-            <div className="col-sm-0">
+            <div className="col-sm-10">
               <input
                 type="email"
+                className="form-control mb-3"
                 name="correo"
+                placeholder="email@mail.com"
                 value={formState.correo}
                 onChange={onChangeFormulario}
               />
@@ -63,11 +68,13 @@ export const Formulario = () => {
             <label htmlFor="telefono" className="col-sm-2 col-form-label">
               Teléfono
             </label>
-            <div className="col-sm-0">
+            <div className="col-sm-10">
               <input
-                type="number"
-                value={formState.telefono}
+                type="tel"
+                className="form-control mb-3"
                 name="telefono"
+                placeholder="+56912345678"
+                value={formState.telefono}
                 onChange={onChangeFormulario}
               />
             </div>
@@ -76,12 +83,16 @@ export const Formulario = () => {
             <label htmlFor="number" className="col-sm-2 col-form-label">
               Numero de Personas
             </label>
-            <div className="col-sm-0">
+            <div className="col-sm-10">
               <input
                 type="number"
+                className="form-control mb-3"
                 name="numeroPersona"
+                placeholder="2"
                 value={formState.numero}
                 onChange={onChangeFormulario}
+                max={20}
+                min={2}
               />
             </div>
           </div>
@@ -89,9 +100,10 @@ export const Formulario = () => {
             <label htmlFor="date" className="col-sm-2 col-form-label">
               Fecha
             </label>
-            <div className="col-sm-0">
+            <div className="col-sm-10">
               <input
                 type="datetime-local"
+                className="form-control"
                 name="fecha"
                 min={moment().format("YYYY-MM-DD hh:mm")}
                 value={formState.fecha}
@@ -100,10 +112,10 @@ export const Formulario = () => {
             </div>
           </div>
           <div className="form-group row justify-content-center">
-            <div className="col-sm-6 mt-3">
+            <div className="col-sm-12">
               <button
                 type="submit"
-                className="btn btn-primary mb-3"
+                className="btn btn-primary btn-block mb-3 mt-3"
                 id="sumbit"
               >
                 Agregar

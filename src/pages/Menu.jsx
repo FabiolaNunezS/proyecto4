@@ -10,7 +10,7 @@ export const Menu = () => {
           <div className="card mb-4">
             <img
               src="../images/asado.jpg"
-              className="card-img-top"
+              className="card-img-top menu-image"
               alt="carne asada"
             />
             <div className="card-body">
@@ -86,11 +86,24 @@ export const Menu = () => {
             </div>
           </div>
         </div>
-        <h2 className="mb-4">Bebidas</h2>
-        <div>
-          <li>Refrescos Naturales: $2,000.</li>
-          <li>Gaseosas: $2,000.</li>
-          <li>Agua: $1,000.</li>
+        <div className="card mb-4">
+          <div className="card-body">
+            <h2 className="card-title">Bebidas</h2>
+            <ul className="list-group">
+              <li className="list-group-item d-flex justify-content-between align-items-center">
+                Refrescos Naturales
+                <span className="price">$2,000</span>
+              </li>
+              <li className="list-group-item d-flex justify-content-between align-items-center">
+                Gaseosas
+                <span className="price">$2,000</span>
+              </li>
+              <li className="list-group-item d-flex justify-content-between align-items-center">
+                Agua
+                <span className="price">$1,000</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

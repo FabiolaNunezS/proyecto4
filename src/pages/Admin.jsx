@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Admin = () => {
   const [formState, setFormState] = useState({
@@ -16,7 +18,8 @@ export const Admin = () => {
 
   const submitFormulario = async (e) => {
     e.preventDefault();
-    alert("login realizado");
+    toast.success("Login realizado");
+    // alert("login realizado");
   };
 
   return (

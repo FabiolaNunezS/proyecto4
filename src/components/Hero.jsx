@@ -7,8 +7,8 @@ export const Hero = () => {
       style={{ backgroundImage: `url('./images/hero.png')` }}
     >
       <div className="container">
-        <h1 className="display-4 text-bg-light p-2">¡Bienvenido a Pinolero!</h1>
-        <p className="lead text-bg-light p-2">
+        <h1 className="header">¡Bienvenido a Pinolero!</h1>
+        <p className="header">
           Disfruta de nuestra deliciosa comida y excelente servicio
         </p>
       </div>
