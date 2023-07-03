@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { NavBar } from "../components/NavBar";
 import { Hero } from "../components/Hero";
 import { db } from "../../firebase/firebase";
 
@@ -22,7 +21,6 @@ export const FormularioReservas = () => {
   }, []);
   return (
     <main>
-      <NavBar />
       <Hero />
       <table>
         <thead>
@@ -30,6 +28,7 @@ export const FormularioReservas = () => {
             <th>Nombre</th>
             <th>Correo</th>
             <th>Telefono</th>
+            <th>Numero de personas</th>
             <th>Fecha</th>
           </tr>
         </thead>
@@ -39,6 +38,7 @@ export const FormularioReservas = () => {
               <td>{element.nombre}</td>
               <td>{element.correo}</td>
               <td>{element.telefono}</td>
+              <td>{element.numeroPersona}</td>
               <td>{element.fecha}</td>
             </tr>
           ))}

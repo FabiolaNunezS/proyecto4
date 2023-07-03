@@ -29,13 +29,13 @@ export const NavBar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/reservas">
-                Formulario de reserva
+              <NavLink className="nav-link" to="/menu">
+                Menu
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/menu">
-                Menu
+              <NavLink className="nav-link" to="/reservas">
+                Iniciar Sesion
               </NavLink>
             </li>
           </ul>

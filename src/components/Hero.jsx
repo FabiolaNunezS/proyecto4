@@ -11,7 +11,6 @@ export const Hero = () => {
         <p className="lead text-bg-light p-2">
           Disfruta de nuestra deliciosa comida y excelente servicio
         </p>
-        <button className="btn btn-light btn-lg">Ver Menú</button>
       </div>
     </div>
   );

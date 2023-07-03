@@ -10,7 +10,9 @@ export const Ubicacion = () => {
               alt="imagen adicional"
               className="rounded img-fluid"
             />
-            <p>Alonso de Córdova 4263, Vitacura, Región Metropolitana</p>
+            <p>
+              Dirección: Alonso de Córdova 4263, Vitacura, Región Metropolitana
+            </p>
             <img
               src="./images/telefono.png"
               alt="imagen adicional"
@@ -18,6 +20,12 @@ export const Ubicacion = () => {
             />
             <p>Teléfono: +56 9 3236 1687</p>
           </div>
+          <img
+            src="./images/correo.png"
+            alt="imagen adicional"
+            className="rounded img-fluid text-center"
+          />
+          <p>Correo: reservas@pinoleros.com</p>
         </div>
       </div>
     </div>

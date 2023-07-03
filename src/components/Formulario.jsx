@@ -8,6 +8,7 @@ export const Formulario = () => {
     nombre: "",
     correo: "",
     telefono: "",
+    numeroPersona: "",
     fecha: "",
   });
 
@@ -40,7 +41,7 @@ export const Formulario = () => {
                 type="text"
                 name="nombre"
                 placeholder="Agregue su nombre"
-                value={formState.Nombre}
+                value={formState.nombre}
                 onChange={onChangeFormulario}
               />
             </div>
@@ -53,7 +54,7 @@ export const Formulario = () => {
               <input
                 type="email"
                 name="correo"
-                value={formState.Correo}
+                value={formState.correo}
                 onChange={onChangeFormulario}
               />
             </div>
@@ -65,8 +66,21 @@ export const Formulario = () => {
             <div className="col-sm-0">
               <input
                 type="number"
-                value={formState.Telefono}
+                value={formState.telefono}
                 name="telefono"
+                onChange={onChangeFormulario}
+              />
+            </div>
+          </div>
+          <div className="form-group row justify-content-center">
+            <label htmlFor="number" className="col-sm-2 col-form-label">
+              Numero de Personas
+            </label>
+            <div className="col-sm-0">
+              <input
+                type="number"
+                name="numeroPersona"
+                value={formState.numero}
                 onChange={onChangeFormulario}
               />
             </div>
@@ -80,7 +94,7 @@ export const Formulario = () => {
                 type="datetime-local"
                 name="fecha"
                 min={moment().format("YYYY-MM-DD hh:mm")}
-                value={formState.Fecha}
+                value={formState.fecha}
                 onChange={onChangeFormulario}
               />
             </div>
