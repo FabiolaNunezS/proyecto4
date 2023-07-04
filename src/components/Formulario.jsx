@@ -1,7 +1,6 @@
 import { useState } from "react";
 import moment from "moment";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import { db } from "../../firebase/firebase";
 
 export const Formulario = () => {

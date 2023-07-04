@@ -1,6 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { auth } from "../../firebase/firebase";
 
-export const NavBar = () => {
+export const NavBar = ({ user, setUser }) => {
+  const navegador = useNavigate();
+  const logOut = async () => {
+    if (window.confirm("desea cerrar sesion")) {
+      await signOut(auth);
+      setUser(null);
+      navegador("/");
+    }
+  };
+
   return (
     <nav
       className="navbar bg-dark border-bottom border-bottom-dark mb-4"
@@ -35,9 +46,15 @@ export const NavBar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/reservas">
-                Iniciar Sesion
-              </NavLink>
+              {!user ? (
+                <NavLink className="nav-link" to="/administrador">
+                  Iniciar Sesion
+                </NavLink>
+              ) : (
+                <Link className="nav-link" onClick={logOut}>
+                  Cerrar Sesion
+                </Link>
+              )}
             </li>
           </ul>
         </div>

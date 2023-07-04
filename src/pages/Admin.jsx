@@ -1,13 +1,17 @@
 import React from "react";
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+import { auth } from "../../firebase/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { Navigate, useNavigate } from "react-router-dom";
 
-export const Admin = () => {
+export const Admin = ({ setUser }) => {
   const [formState, setFormState] = useState({
     correo: "",
     contrasena: "",
   });
+
+  const navegar = useNavigate();
 
   const onChangeAdmin = ({ target }) => {
     setFormState({
@@ -18,7 +22,20 @@ export const Admin = () => {
 
   const submitFormulario = async (e) => {
     e.preventDefault();
-    toast.success("Login realizado");
+    try {
+      const credenciales = await signInWithEmailAndPassword(
+        auth,
+        formState.correo,
+        formState.contrasena
+      );
+      console.log(credenciales);
+      setUser(credenciales.user);
+      toast.success("Login realizado");
+
+      navegar("/reservas");
+    } catch (error) {
+      toast.error("Error de autenticacion");
+    }
     // alert("login realizado");
   };
 
