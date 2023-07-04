@@ -9,10 +9,11 @@ export const MainRoutes = ({ setUser }) => {
     <div className="container">
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/reservas" element={<FormularioReservas />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/administrador" element={<Admin setUser={setUser} />} />
         <Route path="*" element={<Navigate to="/" />} />
+        <Route element={<protectedRoutes />} />
+        <Route path="/reservas" element={<FormularioReservas />} />
+        <Route path="/administrador" element={<Admin setUser={setUser} />} />
       </Routes>
     </div>
   );
