@@ -4,13 +4,14 @@ import { toast } from "react-toastify";
 import { db } from "../../firebase/firebase";
 
 export const Formulario = () => {
-  const [formState, setFormState] = useState({
+  const initialForm = {
     nombre: "",
     correo: "",
     telefono: "",
     numeroPersona: "",
     fecha: "",
-  });
+  };
+  const [formState, setFormState] = useState(initialForm);
 
   const onChangeFormulario = ({ target }) => {
     setFormState({
@@ -24,17 +25,18 @@ export const Formulario = () => {
   const submitFormulario = async (e) => {
     e.preventDefault();
     await db.collection("reservas").add(formState);
+    setFormState(initialForm);
     toast.success("Reserva realizada");
-    // alert("Reserva realizada");
+    alert("Reserva realizada");
   };
 
   return (
     <div className="container">
       <div className="card bg-light text-dark p-4 text-center">
         <h2 className="mb-4">Realiza tu reserva</h2>
-        <form onSubmit={submitFormulario}>
+        <form onSubmit={submitFormulario} id="formulario">
           <div className="form-group row justify-content-center">
-            <label htmlFor="name" className="col-sm-2 col-form-label">
+            <label htmlFor="nombre" className="col-sm-2 col-form-label">
               Nombre
             </label>
             <div className="col-sm-10">
@@ -45,11 +47,12 @@ export const Formulario = () => {
                 placeholder="Agregue su nombre"
                 value={formState.nombre}
                 onChange={onChangeFormulario}
+                required
               />
             </div>
           </div>
           <div className="form-group row justify-content-center">
-            <label htmlFor="email" className="col-sm-2 col-form-label">
+            <label htmlFor="correo" className="col-sm-2 col-form-label">
               Correo
             </label>
             <div className="col-sm-10">
@@ -60,6 +63,7 @@ export const Formulario = () => {
                 placeholder="email@mail.com"
                 value={formState.correo}
                 onChange={onChangeFormulario}
+                required
               />
             </div>
           </div>
@@ -75,11 +79,12 @@ export const Formulario = () => {
                 placeholder="+56912345678"
                 value={formState.telefono}
                 onChange={onChangeFormulario}
+                required
               />
             </div>
           </div>
           <div className="form-group row justify-content-center">
-            <label htmlFor="number" className="col-sm-2 col-form-label">
+            <label htmlFor="numeroPersona" className="col-sm-2 col-form-label">
               Numero de Personas
             </label>
             <div className="col-sm-10">
@@ -88,15 +93,16 @@ export const Formulario = () => {
                 className="form-control mb-3"
                 name="numeroPersona"
                 placeholder="2"
-                value={formState.numero}
+                value={formState.numeroPersona}
                 onChange={onChangeFormulario}
-                max={20}
-                min={2}
+                max="20"
+                min="2"
+                required
               />
             </div>
           </div>
           <div className="form-group row justify-content-center">
-            <label htmlFor="date" className="col-sm-2 col-form-label">
+            <label htmlFor="fecha" className="col-sm-2 col-form-label">
               Fecha
             </label>
             <div className="col-sm-10">
@@ -107,6 +113,7 @@ export const Formulario = () => {
                 min={moment().format("YYYY-MM-DD hh:mm")}
                 value={formState.fecha}
                 onChange={onChangeFormulario}
+                required
               />
             </div>
           </div>

@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <NavBar user={user} setUser={setUser} />
-      <MainRoutes setUser={setUser} />
+      <MainRoutes setUser={setUser} user={user} />
       <Footer />
       <ToastContainer />
     </>

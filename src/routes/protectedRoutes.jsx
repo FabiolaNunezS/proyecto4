@@ -1,5 +1,10 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
 
-export const protectedRoutes = ({ children }) => {
+export const ProtectedRoutes = ({ children, user }) => {
+  console.log(user);
+
+  if (!user) {
+    return <Navigate to="/" />;
+  }
   return children ? children : <Outlet />;
 };

@@ -27,5 +27,5 @@ El proyecto también incluye una sección de administrador donde el personal del
 
 - Inicio de sesión: el administrador debe ingresar un correo electrónico y una contraseña para acceder a la sección de administrador.
 - Privacidad de la información: una vez iniciada la sesión, el administrador puede ver la información de las reservas realizadas por los usuarios sin que estos puedan acceder a dicha información. Para poder ver las reservas pueden ingresar con:
-  administrador@pinolero,com
+  admin@pinolero.com
   password: 123456
