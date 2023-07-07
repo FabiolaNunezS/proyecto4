@@ -36,7 +36,9 @@ export const FormularioReservas = () => {
             <th scope="col">Telefono</th>
             <th scope="col">Numero de personas</th>
             <th scope="col">Fecha</th>
-            <th scope="col">Acción</th>
+            <th scope="col" className="d-md-table-cell">
+              Acción
+            </th>
           </tr>
         </thead>
         <tbody>
