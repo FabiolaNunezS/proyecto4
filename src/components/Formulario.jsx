@@ -27,7 +27,6 @@ export const Formulario = () => {
     await db.collection("reservas").add(formState);
     setFormState(initialForm);
     toast.success("Reserva realizada");
-    alert("Reserva realizada");
   };
 
   return (
