@@ -13,6 +13,7 @@ El proyecto cuenta con las siguientes características:
 - Utilización de React para el desarrollo de la aplicación.
 - Uso de props para el paso de datos entre componentes.
 - Implementación de hooks useState para el manejo de estados en la aplicación.
+- Almacenamiento de datos en firebase.
 
 ### Sección de Reserva
 
