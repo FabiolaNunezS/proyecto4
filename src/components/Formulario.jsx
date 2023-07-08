@@ -33,6 +33,11 @@ export const Formulario = () => {
     <div className="container">
       <div className="card bg-light text-dark p-4 text-center">
         <h2 className="mb-4">Realiza tu reserva</h2>
+        <p className="mb-4">
+          Recuerda que atendemos de 11:00 a 23 hrs, por lo que si realizas una
+          reserva fuera de ese horario, será anulada y se te notificará por
+          medio del correo electrónico o mensajes de texto que dejes indicado.
+        </p>
         <form onSubmit={submitFormulario} id="formulario">
           <div className="form-group row justify-content-center">
             <label htmlFor="nombre" className="col-sm-2 col-form-label">
